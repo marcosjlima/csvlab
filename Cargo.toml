@@ -1,0 +1,13 @@
+[package]
+name = "csvlab"
+version = "0.1.0"
+authors = ["marcosjlima <marcos_jlima@yahoo.com.br>"]
+edition = "2018"
+
+[dependencies]
+csv = "1.1.3"
+serde = "1.0.117"
+chrono = "0.4.19"
+
+[dev-dependencies]
+serde = { version = "1.0.117", features = ["derive"] }
