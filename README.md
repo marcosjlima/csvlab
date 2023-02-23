@@ -14,6 +14,6 @@ Executar
 
 https://www.regular-expressions.info/unicode.html#prop
 
-String valor = "[\\p{M} \\p{Z}\\p{Zl}\\p{Zs}\\p{Zp}\\p{Lm}\\p{Sm}\\p{Sc}\\p{Sk}\\p{So}\\p{C}\\p{Cc}\\p{Cf}\\p{Pd}@,;'\"]";
+String valor = "[\\p{M} \\p{Z}\\p{Zl}\\p{Zs}\\p{Zp}\\p{Lm}\\p{S}\\p{Sm}\\p{Sc}\\p{Sk}\\p{So}\\p{C}\\p{Cc}\\p{Cf}\\p{Cn}\\p{Co}\\p{Cs}\\p{Pd}@,;'\"]";
 
 String teste = "=A@\rOla	Mundao\r+,-; Teste 12344 10.2 çã 0x0D ' * $ . \\ / \"";
