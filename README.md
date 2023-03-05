@@ -12,8 +12,28 @@ Executar
   $ ./target/release/csvlab c:\temp\202001_BolsaFamilia_Pagamentos.csv
 
 
-https://www.regular-expressions.info/unicode.html#prop
+///////////////////////////////////////
+		String eventos = "1234;4321;2528";
+    String horarioExecucao = "18:00;07:59";      
+		String[] horarios = horarioExecucao.split(";");
+		LocalDateTime currentTime = LocalDateTime.now();
+		
+		LocalDateTime datainicial = LocalDateTime.of(currentTime.getYear(), 
+			currentTime.getMonth(), 
+			currentTime.getDayOfMonth(), 
+			Integer.valueOf(horarios[0].split(":")[0]), 
+			Integer.valueOf(horarios[0].split(":")[1]),
+			0);
 
-String valor = "[\\p{M} \\p{Z}\\p{Zl}\\p{Zs}\\p{Zp}\\p{Lm}\\p{S}\\p{Sm}\\p{Sc}\\p{Sk}\\p{So}\\p{C}\\p{Cc}\\p{Cf}\\p{Cn}\\p{Co}\\p{Cs}\\p{Pd}@,;'\"]";
+		LocalDateTime dataFinal = datainicial.plusDays(1);
 
-String teste = "=A@\rOla	Mundao\r+,-; Teste 12344 10.2 çã 0x0D ' * $ . \\ / \"";
+		dataFinal = LocalDateTime.of(dataFinal.getYear(), 
+			dataFinal.getMonth(), dataFinal.getDayOfMonth(), 
+			Integer.valueOf(horarios[1].split(":")[0]), 
+			Integer.valueOf(horarios[1].split(":")[1]), 
+			0);
+
+		boolean horarioValido = currentTime.isAfter(datainicial) && currentTime.isBefore(dataFinal);
+		boolean contemEvento = eventos.contains("2528");
+
+    System.out.println(String.format("%s > %s < %s %s %s", datainicial, currentTime, dataFinal, horarioValido, contemEvento));
