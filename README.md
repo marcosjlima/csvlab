@@ -12,9 +12,9 @@ Executar
   $ ./target/release/csvlab c:\temp\202001_BolsaFamilia_Pagamentos.csv
 
 
-///////////////////////////////////////
+
 		String eventos = "1234;4321;2528";
-    String horarioExecucao = "18:00;07:59";      
+		String horarioExecucao = "18:00;07:59";      
 		String[] horarios = horarioExecucao.split(";");
 		LocalDateTime currentTime = LocalDateTime.now();
 		
@@ -36,4 +36,4 @@ Executar
 		boolean horarioValido = currentTime.isAfter(datainicial) && currentTime.isBefore(dataFinal);
 		boolean contemEvento = eventos.contains("2528");
 
-    System.out.println(String.format("%s > %s < %s %s %s", datainicial, currentTime, dataFinal, horarioValido, contemEvento));
+		System.out.println(String.format("%s > %s < %s %s %s", datainicial, currentTime, dataFinal, horarioValido, contemEvento));
